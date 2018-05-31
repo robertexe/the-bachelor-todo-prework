@@ -44,9 +44,11 @@ def get_occupation(data, hometown)
 end
 
 def get_average_age_for_season(data, season)
-  age_array = [];
+  age_total= 0;
+  counter = 0;
   data[season].each do |hash|
-    age_array << hash["age"].to_i
+    age_total<< hash["age"].to_i
+    counter += 1
   end
-  age_array.sum
+  (age_total / counter.to_f)
 end
