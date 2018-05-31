@@ -52,5 +52,5 @@ def get_average_age_for_season(data, season)
       end
     end
   end
-  age_array = age_array.sum
+  age_array[0].class
 end
