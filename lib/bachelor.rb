@@ -45,17 +45,8 @@ end
 
 def get_average_age_for_season(data, season)
   age_array = [];
-  data.each do |seasons, hash|
-    if seasons.to_s == season
-      data[season].each do |keys, values|
-        age_array << keys["age"].to_i
-      end
-    end
+  data[season].each do |hash|
+    age_array << hash["age"].to_i
   end
-  sum = 0
-  age_array.each do |num|
-    sum += num
-  end
-  average = (sum / age_array.length)
-  average.ceil
+  age_array.sum
 end
